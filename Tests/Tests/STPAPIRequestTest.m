@@ -11,6 +11,12 @@
 #import "STPAPIRequest.h"
 #import "STPTestUtils.h"
 
+@interface STPAPIRequest ()
+
++ (void)parseResponse:(NSURLResponse *)response body:(NSData *)body error:(NSError *)error deserializers:(NSArray<id<STPAPIResponseDecodable>>*)deserializers completion:(STPAPIResponseBlock)completion;
+
+@end
+
 @interface STPAPIRequestTest : XCTestCase
 
 @end

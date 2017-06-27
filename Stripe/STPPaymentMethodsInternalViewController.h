@@ -8,6 +8,7 @@
 
 #import "STPAddress.h"
 #import "STPCoreTableViewController.h"
+#import "STPCustomerContext.h"
 #import "STPPaymentConfiguration+Private.h"
 #import "STPPaymentConfiguration.h"
 #import "STPPaymentMethodTuple.h"
@@ -15,8 +16,7 @@
 @protocol STPPaymentMethodsInternalViewControllerDelegate
 
 - (void)internalViewControllerDidSelectPaymentMethod:(id<STPPaymentMethod>)paymentMethod;
-- (void)internalViewControllerDidCreateToken:(STPToken *)token
-                                  completion:(STPErrorBlock)completion;
+- (void)internalViewControllerDidCreateToken:(STPToken *)token completion:(STPErrorBlock)completion;
 - (void)internalViewControllerDidCancel;
 
 @end
@@ -24,6 +24,7 @@
 @interface STPPaymentMethodsInternalViewController : STPCoreTableViewController
 
 - (instancetype)initWithConfiguration:(STPPaymentConfiguration *)configuration
+                      customerContext:(STPCustomerContext *)customerContext
                                 theme:(STPTheme *)theme
                  prefilledInformation:(STPUserInformation *)prefilledInformation
                       shippingAddress:(STPAddress *)shippingAddress

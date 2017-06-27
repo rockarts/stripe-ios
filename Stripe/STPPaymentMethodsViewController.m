@@ -128,7 +128,10 @@
         }
         UIViewController *internal;
         if (tuple.paymentMethods.count > 0) {
+            STPCustomerContext *customerContext = ([self.apiAdapter isKindOfClass:[STPCustomerContext class]]) ? (STPCustomerContext *)self.apiAdapter : nil;
+
             internal = [[STPPaymentMethodsInternalViewController alloc] initWithConfiguration:self.configuration
+                                                                              customerContext:customerContext
                                                                                         theme:self.theme
                                                                          prefilledInformation:self.prefilledInformation
                                                                               shippingAddress:self.shippingAddress

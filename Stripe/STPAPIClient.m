@@ -520,4 +520,16 @@ toCustomerUsingKey:(STPEphemeralKey *)ephemeralKey
                                              }];
 }
 
++ (void)detachSource:(NSString *)sourceID fromCustomerUsingKey:(STPEphemeralKey *)ephemeralKey completion:(STPSourceProtocolCompletionBlock)completion {
+    STPAPIClient *client = [self apiClientWithEphemeralKey:ephemeralKey];
+    NSString *endpoint = [NSString stringWithFormat:@"%@/%@/%@/%@", customersEndpoint, ephemeralKey.customerID, sourcesEndpoint, sourceID];
+    [STPAPIRequest<STPSourceProtocol> deleteWithAPIClient:client
+                                                 endpoint:endpoint
+                                               parameters:nil
+                                            deserializers:@[[STPCard new], [STPSource new]]
+                                               completion:^(id object, __unused NSHTTPURLResponse *response, NSError *error) {
+                                                   completion(object, error);
+                                               }];
+}
+
 @end
