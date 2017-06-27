@@ -20,7 +20,7 @@
 /**
  *  You cannot directly instantiate an `STPSourceOwner`. You should only use one that is part of an existing `STPSource` object.
  */
-- (nonnull instancetype) init __attribute__((unavailable("You cannot directly instantiate an STPSourceOwner. You should only use one that is part of an existing STPSource object.")));
+- (nonnull instancetype)init __attribute__((unavailable("You cannot directly instantiate an STPSourceOwner. You should only use one that is part of an existing STPSource object.")));
 
 /**
  *  Owner's address.

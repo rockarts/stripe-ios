@@ -17,7 +17,7 @@
 /**
  *  You cannot directly instantiate an `STPSourceReceiver`. You should only use one that is part of an existing `STPSource` object.
  */
-- (nonnull instancetype) init __attribute__((unavailable("You cannot directly instantiate an STPSourceReceiver. You should only use one that is part of an existing STPSource object.")));
+- (nonnull instancetype)init __attribute__((unavailable("You cannot directly instantiate an STPSourceReceiver. You should only use one that is part of an existing STPSource object.")));
 
 /**
  *  The address of the receiver source. This is the value that should be communicated to the customer to send their funds to.

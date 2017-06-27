@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger, STPSourceCard3DSecureStatus) {
  *  You cannot directly instantiate an `STPSourceCardDetails`. You should only 
  *  use one that is part of an existing `STPSource` object.
  */
-- (nonnull instancetype) init __attribute__((unavailable("You cannot directly instantiate an STPSourceCardDetails. You should only use one that is part of an existing STPSource object.")));
+- (nonnull instancetype)init __attribute__((unavailable("You cannot directly instantiate an STPSourceCardDetails. You should only use one that is part of an existing STPSource object.")));
 
 /**
  *  The last 4 digits of the card.
